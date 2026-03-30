@@ -2,6 +2,8 @@ backend:
   name: github
   repo: Thevent26/gizmogear
   branch: main
+  base_url: https://gizmogear.vercel.app
+  auth_endpoint: /api/auth/callback
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
