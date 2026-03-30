@@ -4,18 +4,29 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const code = searchParams.get('code')
 
+  const sendMessage = (msg: string) => `<!DOCTYPE html>
+<html><head><title>Authenticating...</title></head>
+<body>
+<script>
+(function() {
+  function send() {
+    if (window.opener) {
+      window.opener.postMessage('${msg}', '*');
+      setTimeout(function() { window.close(); }, 500);
+    } else {
+      setTimeout(send, 100);
+    }
+  }
+  send();
+})();
+</script>
+<p>Authenticating...</p>
+</body></html>`
+
   if (!code) {
-    // No code — send error back to CMS via postMessage
-    const html = `<!DOCTYPE html>
-<html><head><title>Auth Error</title></head>
-<body><script>
-  window.opener && window.opener.postMessage(
-    'authorization:github:error:missing_code',
-    window.location.origin
-  );
-  window.close();
-</script></body></html>`
-    return new Response(html, { headers: { 'Content-Type': 'text/html' } })
+    return new Response(sendMessage('authorization:github:error:missing_code'), {
+      headers: { 'Content-Type': 'text/html' }
+    })
   }
 
   const clientId = process.env.GITHUB_CLIENT_ID
@@ -31,42 +42,21 @@ export async function GET(request: NextRequest) {
     const tokenData = await tokenRes.json()
 
     if (tokenData.error || !tokenData.access_token) {
-      const html = `<!DOCTYPE html>
-<html><head><title>Auth Error</title></head>
-<body><script>
-  window.opener && window.opener.postMessage(
-    'authorization:github:error:${tokenData.error || 'auth_failed'}',
-    window.location.origin
-  );
-  window.close();
-</script></body></html>`
-      return new Response(html, { headers: { 'Content-Type': 'text/html' } })
+      return new Response(sendMessage(`authorization:github:error:${tokenData.error || 'auth_failed'}`), {
+        headers: { 'Content-Type': 'text/html' }
+      })
     }
 
-    // Success — send token back to CMS via postMessage
     const token = tokenData.access_token
-    const html = `<!DOCTYPE html>
-<html><head><title>Authorized</title></head>
-<body><script>
-  window.opener && window.opener.postMessage(
-    'authorization:github:success:' + JSON.stringify({ token: '${token}', provider: 'github' }),
-    window.location.origin
-  );
-  window.close();
-</script>
-<p>Authorized! You can close this window.</p>
-</body></html>`
-    return new Response(html, { headers: { 'Content-Type': 'text/html' } })
-  } catch (e) {
-    const html = `<!DOCTYPE html>
-<html><head><title>Auth Error</title></head>
-<body><script>
-  window.opener && window.opener.postMessage(
-    'authorization:github:error:server_error',
-    window.location.origin
-  );
-  window.close();
-</script></body></html>`
-    return new Response(html, { headers: { 'Content-Type': 'text/html' } })
+    const content = JSON.stringify({ token, provider: 'github' })
+    const successMsg = `authorization:github:success:${content}`
+
+    return new Response(sendMessage(successMsg), {
+      headers: { 'Content-Type': 'text/html' }
+    })
+  } catch {
+    return new Response(sendMessage('authorization:github:error:server_error'), {
+      headers: { 'Content-Type': 'text/html' }
+    })
   }
 }
