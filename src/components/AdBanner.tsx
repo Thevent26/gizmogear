@@ -26,6 +26,18 @@ const ads: Ad[] = [
     accent: '#00d4ff',
   },
   {
+    name: 'TechTrends',
+    tagline: "Zambia's Tech News Hub",
+    description: "Stay updated with the latest in Zambian tech, gadgets, and digital trends.",
+    url: 'https://www.techtrends.co.zm',
+    icon: (
+      <svg className="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    accent: '#10b981',
+  },
+  {
     name: 'The Vent',
     tagline: 'Voice Out. Let It Out.',
     description: ' Zambia\'s anonymous social platform. Share your truths, vent freely, connect honestly.',
