@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0a0f]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/50 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <img src="/images/logo.png" alt="GizmoGear" style={{height: '120px'}} className="w-auto" />
