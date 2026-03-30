@@ -1,20 +1,14 @@
-import { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server';
 
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID!
+// GitHub OAuth App credentials
+const CLIENT_ID = 'Ov23liHBbaF52UeGN7On';
+const REDIRECT_URI = 'https://gizmogear.vercel.app/api/auth/callback';
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url)
-  const provider = searchParams.get('provider')
-
-  if (provider === 'github') {
-    // Redirect to GitHub OAuth
-    const params = new URLSearchParams({
-      client_id: GITHUB_CLIENT_ID,
-      scope: 'repo,user',
-      redirect_uri: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://gizmogear.vercel.app'}/api/auth/callback`,
-    })
-    return Response.redirect(`https://github.com/login/oauth/authorize?${params}`)
-  }
-
-  return new Response('Unknown provider', { status: 400 })
+export async function GET() {
+  const authUrl = new URL('https://github.com/login/oauth/authorize');
+  authUrl.searchParams.set('client_id', CLIENT_ID);
+  authUrl.searchParams.set('redirect_uri', REDIRECT_URI);
+  authUrl.searchParams.set('scope', 'repo user');
+  
+  return NextResponse.redirect(authUrl.toString());
 }
