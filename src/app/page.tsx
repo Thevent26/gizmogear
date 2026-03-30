@@ -204,41 +204,85 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-20 px-6 border-t border-white/5" id="about">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Why GizmoGear?</h2>
-          <p className="text-gray-400 text-lg leading-relaxed mb-8">
-            Most tech reviews are written from Silicon Valley or London. We write from Lusaka. 
-            Our reviews consider load-shedding, Zambian network conditions, local pricing, and real-world 
-            use cases that matter to you.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl bg-[#12121a] border border-white/5">
-              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-cyan-500/20 flex items-center justify-center">
-                <svg className="w-6 h-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            {/* Text Content - Left */}
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="circuit-line w-12" />
+                <span className="text-xs uppercase tracking-widest text-cyan-400 font-medium">About Tech Joe</span>
               </div>
-              <h3 className="text-white font-semibold mb-2">Honest Reviews</h3>
-              <p className="text-gray-500 text-sm">No sponsored fluff. Real opinions from real testing.</p>
+              
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                Hey, I'm Tech Joe.
+                <br />
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  And this is my lab.
+                </span>
+              </h2>
+              
+              <div className="space-y-5 text-gray-400 leading-relaxed text-lg">
+                <p>
+                  <span className="text-white font-medium">GizmoGear isn't your typical tech blog.</span> Most tech content out there is written from Silicon Valley or London — places where load-shedding isn't a thing, 4G is everywhere, and prices are... different.
+                </p>
+                <p>
+                  I write from Lusaka. Every gadget I review, every service I test, every guide I publish — it all happens right here. Real conditions. Real prices. Real opinions.
+                </p>
+                <p>
+                  My team and I collect the latest tech, run it through real-world tests, and bring you the honest truth. No sponsored fluff. Just the stuff that actually works in Zambia.
+                </p>
+              </div>
+
+              {/* Value props */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+                <div className="p-5 rounded-xl bg-[#12121a] border border-white/5">
+                  <div className="w-10 h-10 mb-3 rounded-lg bg-cyan-500/20 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-white font-semibold text-sm mb-1">Honest Reviews</h3>
+                  <p className="text-gray-500 text-xs">No fluff. Real testing.</p>
+                </div>
+                <div className="p-5 rounded-xl bg-[#12121a] border border-white/5">
+                  <div className="w-10 h-10 mb-3 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-white font-semibold text-sm mb-1">Local Context</h3>
+                  <p className="text-gray-500 text-xs">Made for Zambia.</p>
+                </div>
+                <div className="p-5 rounded-xl bg-[#12121a] border border-white/5">
+                  <div className="w-10 h-10 mb-3 rounded-lg bg-pink-500/20 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-white font-semibold text-sm mb-1">Real Tests</h3>
+                  <p className="text-gray-500 text-xs">By me and my team.</p>
+                </div>
+              </div>
             </div>
-            <div className="p-6 rounded-xl bg-[#12121a] border border-white/5">
-              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-purple-500/20 flex items-center justify-center">
-                <svg className="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+
+            {/* Tech Joe Photo - Right */}
+            <div className="lg:w-80 flex-shrink-0">
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                  <img 
+                    src="/images/tech-joe-about.jpg" 
+                    alt="Tech Joe" 
+                    className="w-full object-cover"
+                  />
+                </div>
+                {/* Accent glow */}
+                <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 -z-10" />
+                {/* Name tag */}
+                <div className="absolute -bottom-4 left-4 right-4 bg-[#12121a]/90 backdrop-blur-sm border border-white/10 rounded-xl p-4">
+                  <div className="text-white font-bold">Tech Joe</div>
+                  <div className="text-gray-500 text-sm">Founder & Lead Tester</div>
+                </div>
               </div>
-              <h3 className="text-white font-semibold mb-2">Local Context</h3>
-              <p className="text-gray-500 text-sm">Tested in Zambia, for Zambians.</p>
-            </div>
-            <div className="p-6 rounded-xl bg-[#12121a] border border-white/5">
-              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-pink-500/20 flex items-center justify-center">
-                <svg className="w-6 h-6 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-white font-semibold mb-2">Practical Guides</h3>
-              <p className="text-gray-500 text-sm">Actionable advice that actually works here.</p>
             </div>
           </div>
         </div>
