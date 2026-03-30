@@ -4,6 +4,7 @@ backend:
   branch: main
   auth_type: pkce
   app_id: Ov23liHBbaF52UeGN7On
+  base_url: https://api.github.com
 
 media_folder: public/images/uploads
 public_folder: /images/uploads
