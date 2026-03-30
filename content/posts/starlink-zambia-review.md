@@ -4,7 +4,7 @@ date: 2026-03-30
 author: Joetech
 category: Reviews
 excerpt: "We've had Starlink in Zambia for about 3 years now. Amazing technology, quality internet — but is it worth the cost for the average Zambian?"
-coverImage: ""
+coverImage: "/images/tech-joe-starlink.jpg"
 tags:
   - Starlink
   - Internet
