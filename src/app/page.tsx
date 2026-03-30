@@ -1,5 +1,6 @@
 import { getAllPosts, getFeaturedPost } from '@/lib/posts'
 import Link from 'next/link'
+import AdBanner from '@/components/AdBanner'
 
 // Category color mapping
 const categoryColors: Record<string, string> = {
@@ -197,6 +198,9 @@ export default function Home() {
           )}
         </div>
       </section>
+
+      {/* Sponsored Ad Banner */}
+      <AdBanner />
 
       {/* About Section */}
       <section className="py-20 px-6 border-t border-white/5" id="about">
