@@ -2,7 +2,16 @@
 
 import { useEffect, useState } from 'react'
 
-const ads = [
+interface Ad {
+  name: string
+  tagline: string
+  description: string
+  url: string
+  icon: React.ReactNode
+  accent: string
+}
+
+const ads: Ad[] = [
   {
     name: 'Lusaka365',
     tagline: 'Your Ultimate Lusaka City Guide',
@@ -49,7 +58,7 @@ function BrowserMockup({ children, accent }: { children: React.ReactNode; accent
   )
 }
 
-function ScrollingLogos({ ads }: { ads: typeof ads }) {
+function ScrollingLogos({ ads }: { ads: Ad[] }) {
   const [offset, setOffset] = useState(0)
 
   useEffect(() => {
