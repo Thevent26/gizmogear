@@ -2,8 +2,8 @@ backend:
   name: github
   repo: Thevent26/gizmogear
   branch: main
-  base_url: https://gizmogear.vercel.app/
-  auth_endpoint: /api/auth/callback/
+  base_url: https://gizmogear.vercel.app
+  auth_endpoint: api/auth/callback
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
@@ -11,11 +11,9 @@ backend:
     uploadMedia: 'Upload "{{path}}"'
     deleteMedia: 'Delete "{{path}}"'
 
-# Where uploaded media is stored
 media_folder: public/images/uploads
 public_folder: /images/uploads
 
-# Content collections
 collections:
   - name: 'posts'
     label: 'Blog Posts'
@@ -23,7 +21,6 @@ collections:
     create: true
     delete: true
     slug: '{{slug}}'
-    preview_path: 'posts/{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD' }
@@ -33,11 +30,7 @@ collections:
       - { label: 'Cover Image', name: 'coverImage', widget: 'image', required: false }
       - { label: 'Tags', name: 'tags', widget: 'list', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'Featured'
-        name: 'featured'
-        widget: 'boolean'
-        default: false
-        required: false
+      - { label: 'Featured', name: 'featured', widget: 'boolean', default: false, required: false }
 
   - name: 'pages'
     label: 'Pages'
