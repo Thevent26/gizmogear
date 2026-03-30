@@ -84,11 +84,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">G</span>
-            </div>
-            <span className="font-bold text-xl text-white tracking-tight">GizmoGear</span>
+          <Link href="/" className="flex items-center gap-2">
+            <img src="/images/logo.png" alt="GizmoGear" className="h-10 w-auto" />
           </Link>
           <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -168,9 +165,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <footer className="py-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">G</span>
-            </div>
+            <img src="/images/logo.png" alt="GizmoGear" className="h-8 w-auto" />
             <span className="text-gray-500 text-sm">© 2026 GizmoGear. All rights reserved.</span>
           </div>
         </div>
