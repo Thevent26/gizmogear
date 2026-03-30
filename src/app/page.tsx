@@ -88,7 +88,7 @@ export default function Home() {
                       
                       <div className="flex items-center gap-6 text-sm text-gray-500">
                         <span className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600" />
+                          <img src="/images/tech-joe-avatar.png" alt="Tech Joe" className="w-8 h-8 rounded-full object-cover" />
                           {featuredPost.author}
                         </span>
                         <span>{featuredPost.date}</span>

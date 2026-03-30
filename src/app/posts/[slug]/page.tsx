@@ -122,7 +122,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             
             <div className="flex items-center gap-6 text-sm text-gray-500 pb-8 border-b border-white/10">
               <span className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600" />
+                <img src="/images/tech-joe-avatar.png" alt="Tech Joe" className="w-10 h-10 rounded-full object-cover" />
                 <span className="text-white font-medium">{post.author}</span>
               </span>
               <span>{post.date}</span>
