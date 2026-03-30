@@ -1,7 +1,7 @@
 ---
 title: "Starlink in Zambia: A 3-Year Review — Is It Worth the Investment?"
 date: 2026-03-30
-author: Joetech
+author: Tech Joe
 category: Reviews
 excerpt: "We've had Starlink in Zambia for about 3 years now. Amazing technology, quality internet — but is it worth the cost for the average Zambian?"
 coverImage: "/images/tech-joe-starlink.jpg"
