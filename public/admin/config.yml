@@ -2,14 +2,8 @@ backend:
   name: github
   repo: Thevent26/gizmogear
   branch: main
-  base_url: https://gizmogear.vercel.app
-  auth_endpoint: api/auth
-  commit_messages:
-    create: 'Create {{collection}} "{{slug}}"'
-    update: 'Update {{collection}} "{{slug}}"'
-    delete: 'Delete {{collection}} "{{slug}}"'
-    uploadMedia: 'Upload "{{path}}"'
-    deleteMedia: 'Delete "{{path}}"'
+  auth_type: pkce
+  app_id: Ov23liHBbaF52UeGN7On
 
 media_folder: public/images/uploads
 public_folder: /images/uploads
