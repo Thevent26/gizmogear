@@ -3,7 +3,7 @@ backend:
   repo: Thevent26/gizmogear
   branch: main
   base_url: https://gizmogear.vercel.app
-  auth_endpoint: api/auth/callback
+  auth_endpoint: api/auth
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
