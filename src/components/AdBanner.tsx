@@ -38,29 +38,34 @@ const ads: Ad[] = [
   },
 ]
 
-function BrowserMockup({ url, accent }: { url: string; accent: string }) {
-  const [previewUrl, setPreviewUrl] useState<string | null>(null)
+interface BrowserMockupProps {
+  url: string
+  accent: string
+}
+
+function BrowserMockup({ url, accent }: BrowserMockupProps) {
+  const [previewUrl, setPreviewUrl] = useState('')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    let mounted = true
+    let cancelled = false
 
     async function fetchPreview() {
       try {
         const res = await fetch(`/api/ad-preview?url=${encodeURIComponent(url)}`)
-        const data = await res.json()
-        if (mounted && data.image) {
+        const data = await res.json() as { image: string | null }
+        if (!cancelled && data.image) {
           setPreviewUrl(data.image)
         }
       } catch {
-        // silently fail
+        // silent fail
       } finally {
-        if (mounted) setLoading(false)
+        if (!cancelled) setLoading(false)
       }
     }
 
     fetchPreview()
-    return () => { mounted = false }
+    return () => { cancelled = true }
   }, [url])
 
   return (
@@ -118,7 +123,7 @@ export default function AdBanner() {
           <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
         </div>
 
-        {/* Featured Ad Cards - half width, grid */}
+        {/* Featured Ad Cards - half width, 3-column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {ads.map((ad, i) => (
             <a
@@ -162,6 +167,44 @@ export default function AdBanner() {
             </a>
           ))}
         </div>
+
+        {/* Scrolling ticker - right to left */}
+        <div className="relative w-full overflow-hidden py-4">
+          <div
+            className="flex items-center gap-4 whitespace-nowrap"
+            style={{
+              animation: 'scroll-left 20s linear infinite',
+            }}
+          >
+            {[...ads, ...ads, ...ads, ...ads].map((ad, i) => (
+              <a
+                key={`${ad.name}-${i}`}
+                href={ad.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-200"
+              >
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${ad.accent}20` }}>
+                  <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: ad.accent }} />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-white">{ad.name}</div>
+                  <div className="text-xs text-gray-500">{ad.tagline}</div>
+                </div>
+              </a>
+            ))}
+          </div>
+          {/* Fade edges */}
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#0a0a0f] to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#0a0a0f] to-transparent pointer-events-none" />
+        </div>
+
+        <style jsx>{`
+          @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
       </div>
     </section>
   )
