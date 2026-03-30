@@ -44,14 +44,13 @@ export async function GET(request: NextRequest) {
   <script>
     (function() {
       const token = "${accessToken}";
-      const provider = "github";
       
       if (window.opener) {
         window.opener.postMessage(
-          'authorization:' + provider + ':success:' + JSON.stringify({ token: token, provider: provider }),
-          window.location.origin
+          'authorization:github:success:{"token":"' + token + '","provider":"github"}',
+          '*'
         );
-        window.close();
+        setTimeout(function() { window.close(); }, 500);
       } else {
         document.body.innerHTML = '<p>Authorization successful! You can close this window.</p>';
       }
