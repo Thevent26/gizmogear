@@ -138,7 +138,7 @@ export default function WhyZambiaSection() {
             {pillars.map((pillar, i) => (
               <div
                 key={pillar.label}
-                className="reveal p-6 rounded-2xl border border-[#1e1e2e] bg-[#0f0f17] bracket-card card-hover"
+                className="reveal p-6 rounded-2xl border border-[var(--card-border)] bg-[var(--bg-card)] bracket-card card-hover"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="mb-4">{pillar.icon}</div>

@@ -52,7 +52,7 @@ export default function PollWidget() {
         </div>
 
         {/* Card */}
-        <div className="rounded-3xl border border-[#1e1e2e] bg-[#0f0f17] p-8 glow-violet">
+        <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--bg-card)] p-8 glow-violet">
           {/* Glowing top line */}
           <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/50 to-transparent" />
 
@@ -70,7 +70,7 @@ export default function PollWidget() {
                 <button
                   key={option.id}
                   onClick={() => handleVote(option.id)}
-                  className="w-full flex items-center gap-4 p-4 rounded-xl border border-[#1e1e2e] bg-[#16161f] hover:border-[#8b5cf6]/50 hover:bg-[#1a1a28] transition-all duration-200 group text-left"
+                  className="w-full flex items-center gap-4 p-4 rounded-xl border border-[var(--card-border)] bg-[var(--bg-card)] hover:border-[var(--accent-purple)]/50 hover:bg-[var(--bg-card)] transition-all duration-200 group text-left"
                 >
                   <span className="text-xl w-8 text-center">{option.icon}</span>
                   <span className="font-display font-medium text-white flex-1 group-hover:text-[#8b5cf6] transition-colors">
@@ -111,7 +111,7 @@ export default function PollWidget() {
                           {pct}%
                         </span>
                       </div>
-                      <div className="h-2 rounded-full bg-[#16161f] border border-[#1e1e2e] overflow-hidden">
+                      <div className="h-2 rounded-full bg-[var(--bg-card)] border border-[var(--card-border)] overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all duration-700 ease-out"
                           style={{

@@ -26,14 +26,25 @@ export default function NavBar() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
   useEffect(() => {
+    const saved = localStorage.getItem('gizmogear-theme')
+    if (saved === 'light') {
+      setTheme('light')
+      document.documentElement.classList.add('light')
+    }
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const toggleTheme = () => {
-    setTheme(t => t === 'dark' ? 'light' : 'dark')
-    document.documentElement.classList.toggle('light')
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    localStorage.setItem('gizmogear-theme', next)
+    if (next === 'light') {
+      document.documentElement.classList.add('light')
+    } else {
+      document.documentElement.classList.remove('light')
+    }
   }
 
   return (
@@ -62,7 +73,7 @@ export default function NavBar() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg border border-[#1e1e2e] hover:border-[#00d4ff] transition-colors duration-200"
+              className="p-2 rounded-lg border border-[var(--card-border)] hover:border-[#00d4ff] transition-colors duration-200"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} className="text-[#f59e0b]" /> : <Moon size={18} className="text-[#8b5cf6]" />}
@@ -70,7 +81,7 @@ export default function NavBar() {
 
             <button
               onClick={() => setMobileOpen(o => !o)}
-              className="md:hidden p-2 rounded-lg border border-[#1e1e2e]"
+              className="md:hidden p-2 rounded-lg border border-[var(--card-border)]"
               aria-label="Menu"
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -80,7 +91,7 @@ export default function NavBar() {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-[#1e1e2e] pt-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-[var(--card-border)] pt-4">
             <div className="flex flex-col gap-3">
               {navLinks.map(link => (
                 <a

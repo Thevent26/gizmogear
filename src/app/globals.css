@@ -10,6 +10,20 @@
   --text-muted: #64748b;
   --accent-cyan: #00d4ff;
   --accent-purple: #8b5cf6;
+  --nav-bg: rgba(10, 10, 15, 0.8);
+  --card-border: rgba(255, 255, 255, 0.05);
+}
+
+.light {
+  --bg-deep: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent-cyan: #0891b2;
+  --accent-purple: #7c3aed;
+  --nav-bg: rgba(248, 250, 252, 0.8);
+  --card-border: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -155,4 +169,48 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Light mode overrides */
+.light body {
+  background-color: var(--bg-deep);
+  color: var(--text-secondary);
+}
+
+.light .nav-scrolled {
+  background: var(--nav-bg) !important;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.light ::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+.light .prose h1,
+.light .prose h2,
+.light .prose h3 {
+  color: var(--text-primary);
+}
+
+.light .prose code {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.light .prose pre {
+  background: var(--bg-card);
+  border-color: var(--card-border);
+}
+
+.light .prose th {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+.light .prose th,
+.light .prose td {
+  border-color: var(--card-border);
 }

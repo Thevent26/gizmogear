@@ -69,9 +69,9 @@ function BrowserMockup({ url, accent }: BrowserMockupProps) {
   }, [url])
 
   return (
-    <div className="relative flex-shrink-0 w-40 h-28 rounded-lg overflow-hidden border border-white/10 shadow-xl" style={{ borderColor: `${accent}30` }}>
+    <div className="relative flex-shrink-0 w-40 h-28 rounded-lg overflow-hidden border border-[var(--card-border)] shadow-xl" style={{ borderColor: `${accent}30` }}>
       {/* Browser chrome */}
-      <div className="h-5 bg-[#1a1a2e] flex items-center gap-1.5 px-2 border-b border-white/5">
+      <div className="h-5 bg-[var(--bg-card)] flex items-center gap-1.5 px-2 border-b border-[var(--card-border)]">
         <div className="w-2 h-2 rounded-full bg-red-500/60" />
         <div className="w-2 h-2 rounded-full bg-yellow-500/60" />
         <div className="w-2 h-2 rounded-full bg-green-500/60" />
@@ -80,7 +80,7 @@ function BrowserMockup({ url, accent }: BrowserMockupProps) {
       <div className="h-[calc(100%-20px)] overflow-hidden bg-gradient-to-br from-[#0f0f17] to-[#12121a]">
         {loading ? (
           <div className="w-full h-full flex items-center justify-center">
-            <div className="w-4 h-4 border border-white/20 border-t-cyan-500 rounded-full animate-spin" />
+            <div className="w-4 h-4 border border-[var(--card-border)] border-t-cyan-500 rounded-full animate-spin" />
           </div>
         ) : previewUrl ? (
           <img
@@ -182,7 +182,7 @@ export default function AdBanner() {
                 href={ad.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-200"
+                className="flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl bg-white/5 border border-[var(--card-border)] hover:border-[var(--card-border)] hover:bg-white/[0.07] transition-all duration-200"
               >
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${ad.accent}20` }}>
                   <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: ad.accent }} />

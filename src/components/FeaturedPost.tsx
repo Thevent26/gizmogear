@@ -96,7 +96,7 @@ export default function FeaturedPost() {
             <div className="hidden md:flex flex-col items-center justify-center w-64">
               <div className="relative">
                 {/* Phone mockup */}
-                <div className="w-40 h-[320px] rounded-[2.5rem] border-2 border-[#1e1e2e] bg-[#0f0f17] p-3 shadow-2xl">
+                <div className="w-40 h-[320px] rounded-[2.5rem] border-2 border-[var(--card-border)] bg-[var(--bg-card)] p-3 shadow-2xl">
                   <div className="w-full h-full rounded-[2rem] bg-gradient-to-br from-[#1a1a2e] to-[#0f0f17] flex items-center justify-center overflow-hidden">
                     <div className="text-center">
                       <svg width="60" height="60" viewBox="0 0 60 60" fill="none" className="mx-auto mb-2">
@@ -109,7 +109,7 @@ export default function FeaturedPost() {
                     </div>
                   </div>
                   {/* Camera bump */}
-                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-16 h-6 bg-[#0f0f17] rounded-b-2xl border-2 border-b-0 border-[#1e1e2e]" />
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-16 h-6 bg-[var(--bg-card)] rounded-b-2xl border-2 border-b-0 border-[var(--card-border)]" />
                 </div>
                 {/* Glow behind phone */}
                 <div

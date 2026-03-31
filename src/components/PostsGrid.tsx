@@ -84,7 +84,7 @@ function PostCard({ post, delay }: { post: Post; delay: number }) {
     <div ref={ref} className="reveal">
       <a
         href={`/posts/${post.slug}`}
-        className="group block h-full rounded-2xl overflow-hidden bracket-card card-hover border border-[#1e1e2e] bg-[#0f0f17]"
+        className="group block h-full rounded-2xl overflow-hidden bracket-card card-hover border border-[var(--card-border)] bg-[var(--bg-card)]"
       >
         {/* Thumbnail */}
         <div className={`h-48 relative overflow-hidden bg-gradient-to-br ${post.gradient}`}>

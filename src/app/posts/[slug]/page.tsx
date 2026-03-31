@@ -49,11 +49,11 @@ function markdownToHtml(markdown: string): string {
       const cellTag = isHeader ? 'th' : 'td'
       const cellClass = isHeader 
         ? 'px-4 py-3 text-left text-sm font-semibold text-white bg-white/5'
-        : 'px-4 py-3 text-sm text-gray-300 border-t border-white/5'
+        : 'px-4 py-3 text-sm text-gray-300 border-t border-[var(--card-border)]'
       return `<tr>${cells.map(c => `<${cellTag} class="${cellClass}">${c.trim()}</${cellTag}>`).join('')}</tr>`
     })
     // Horizontal rules
-    .replace(/^---$/gim, '<hr class="my-8 border-white/10" />')
+    .replace(/^---$/gim, '<hr class="my-8 border-[var(--card-border)]" />')
     // Paragraphs
     .replace(/\n\n/g, '</p><p class="mb-6 text-gray-300 leading-relaxed">')
 
@@ -61,7 +61,7 @@ function markdownToHtml(markdown: string): string {
   html = `<p class="mb-6 text-gray-300 leading-relaxed">${html}</p>`
   
   // Wrap tables
-  html = html.replace(/(<tr>[\s\S]*?<\/tr>)+/g, '<table class="w-full my-6 rounded-lg overflow-hidden border border-white/10"><tbody>$&</tbody></table>')
+  html = html.replace(/(<tr>[\s\S]*?<\/tr>)+/g, '<table class="w-full my-6 rounded-lg overflow-hidden border border-[var(--card-border)]"><tbody>$&</tbody></table>')
   
   // Clean up empty paragraphs
   html = html.replace(/<p class="[^"]*"><\/p>/g, '')
@@ -80,9 +80,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const contentHtml = markdownToHtml(post.content)
 
   return (
-    <main className="min-h-screen bg-[#0a0a0f]">
+    <main className="min-h-screen bg-[var(--bg-deep)]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/50 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-deep)]/50 backdrop-blur-xl border-b border-[var(--card-border)]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <img src="/images/logo.png" alt="GizmoGear" style={{height: '120px'}} className="w-auto" />
@@ -120,7 +120,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               {post.excerpt}
             </p>
             
-            <div className="flex items-center gap-6 text-sm text-gray-500 pb-8 border-b border-white/10">
+            <div className="flex items-center gap-6 text-sm text-gray-500 pb-8 border-b border-[var(--card-border)]">
               <span className="flex items-center gap-2">
                 <img src="/images/tech-joe-avatar.png" alt="Tech Joe" className="w-10 h-10 rounded-full object-cover" />
                 <span className="text-white font-medium">{post.author}</span>
@@ -138,7 +138,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-white/10">
+            <div className="mt-12 pt-8 border-t border-[var(--card-border)]">
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span key={tag} className="px-3 py-1 rounded-full text-xs bg-white/5 text-gray-400">
@@ -162,7 +162,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       </article>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/5">
+      <footer className="py-12 px-6 border-t border-[var(--card-border)]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img src="/images/logo.png" alt="GizmoGear" className="h-6 w-auto" />
