@@ -2,6 +2,7 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import NavBar from '@/components/NavBar'
 
 // Generate static params for all posts
 export async function generateStaticParams() {
@@ -81,20 +82,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <main className="min-h-screen bg-[var(--bg-deep)]">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-deep)]/50 backdrop-blur-xl border-b border-[var(--card-border)]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/images/logo.png" alt="GizmoGear" style={{height: '120px'}} className="w-auto" />
-          </Link>
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Home
-          </Link>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Article */}
       <article className="pt-32 pb-20 px-6">

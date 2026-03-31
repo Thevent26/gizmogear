@@ -1,6 +1,7 @@
 import { getAllPosts, getFeaturedPost } from '@/lib/posts'
 import Link from 'next/link'
 import AdBanner from '@/components/AdBanner'
+import NavBar from '@/components/NavBar'
 
 // Category color mapping
 const categoryColors: Record<string, string> = {
@@ -22,20 +23,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[var(--bg-deep)]">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--nav-bg)] backdrop-blur-xl border-b border-[var(--card-border)]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/images/logo.png" alt="GizmoGear" style={{height: '120px'}} className="w-auto" />
-          </Link>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/posts" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">All Posts</Link>
-            <Link href="#reviews" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">Reviews</Link>
-            <Link href="#guides" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">Guides</Link>
-            <Link href="#about" className="text-gray-400 hover:text-white transition-colors text-sm font-medium">About</Link>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Hero Section with Featured Article */}
       <section className="pt-24 pb-12 px-6">
