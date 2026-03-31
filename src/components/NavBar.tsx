@@ -13,7 +13,7 @@ const navLinks = [
 function GizmoGearLogo({ height = 40 }: { height?: number }) {
   return (
     <img
-      src="/logo.png"
+      src="/images/logo.png"
       alt="GizmoGear"
       style={{ height: `${height}px`, width: 'auto', objectFit: 'contain' }}
     />
@@ -53,7 +53,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <GizmoGearLogo height={36} />
+            <GizmoGearLogo height={125} />
           </a>
 
           {/* Desktop Nav */}
