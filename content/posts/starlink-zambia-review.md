@@ -14,64 +14,58 @@ tags:
 featured: true
 ---
 
-We have had Starlink in Zambia for about 3 years now — well, officially anyway — and the reception has been good, for those that can afford it. Amazing technology, quality internet.
+So... let me tell you what I think.
 
-## What is Starlink?
+We have had Starlink in Zambia for about 3 years now. Officially anyway. And look... it is impressive. Genuinely impressive. But is it worth it for the average Zambian? That is the real question.
 
-For the basic user who doesn't understand all the technical jargon of fibre, modems, etc., Starlink is super fast internet that is always on, you own, and can work anywhere. It can be accessed using Starlink equipment which is a satellite dish similar to your DSTV dish.
+## What Even Is Starlink?
 
-## Why Does It Stand Out?
+Okay so you know how we all grew up with that DSTV dish outside the house? Starlink is kind of like that. Except instead of picking up TV signals from some satellite in space, it is picking up internet. Yes, internet. From space. The future is weird.
 
-Where other internet providers may have to run cables in order for you to enjoy high-speed constant internet, Starlink only requires electricity. In comparison, the cost of internet through Starlink is considered cheaper due to the high speeds of internet you get and the quality of service too. It is definitely something to rave about.
+You get a dish that you mount outside, point it at the sky, and then it connects to a router inside. The router broadcasts WiFi and you connect your phone, laptop, whatever to it. And then boom... you are online. No cables, no phone line, nothing. Just electricity and a clear view of the sky.
+
+## Why This Thing Is Different
+
+Now here is where it gets interesting.
+
+Where other internet providers in Zambia make you wait for cables to be run to your area, sometimes for years by the way... Starlink just needs you to have power. That is it. You do not need to wait for Zamtel or whoever to dig up roads and lay fibre. You just set it up and you are cooking.
+
+The speeds are genuinely good. Like really good. I have been using it for 3 years and the thing just works. Rainy season? Still works. Grid power is out? Well that is a different problem obviously... but the internet itself does not care.
 
 ## The Hardware
 
-The Starlink equipment itself is a quality piece of equipment — premium. It is well built, strong, and almost basically weatherproof.
+Okay the equipment itself is nice. Like premium nice. The dish is small, discrete, and honestly looks kind of cool on a roof. It is weatherproof so you do not have to worry about it getting wrecked by the rain or the sun.
 
-You get a dish that needs to point at the sky. This is mounted outside and then connected via a single cable (that provides power to the dish) to a router. This router broadcasts WiFi which you connect to.
+But here is the thing about the WiFi coverage... it is not great. If you have a big house, the router that comes with it might not reach every corner. I had to get a separate WiFi access point to cover everywhere in my place. Just something to keep in mind.
 
-Now, it's important to note that the coverage of the WiFi is not the best. It is sufficient for a standard 2-3 bedroom house.
+## Let Me Explain the Speed Thing
 
-## Let's Talk About Fast Internet
+So internet speed is measured in Megabits per second. You will see it written as Mbps. Think of it like water flowing through a pipe.
 
-How is internet speed measured? Internet speed is measured in Megabits per second (Mbps). Now, we have two things to consider: **bandwidth** and **throughput**.
+Bandwidth is how wide the pipe is. The wider the pipe, the more water can flow through at once.
 
-Let me use water flow through a hose pipe as an analogy:
+Throughput is how fast the water is actually moving through that pipe.
 
-- **Bandwidth** is basically the size of the pipe. The bigger the pipe, the more water that can flow.
-- **Throughput** is how fast the water is flowing through the pipe.
+Now here is the thing. You can have a really wide pipe but if the water is barely moving, you are still waiting forever to fill that swimming pool. And nobody wants to wait.
 
-### The Swimming Pool Analogy
+With Starlink, you have got a nice wide pipe with actual pressure behind it. So yes, your downloads are fast. Your YouTube videos load quick. Your Zoom calls do not freeze every 5 minutes.
 
-Let's use a swimming pool as our task to be completed — we have to fill it up.
+## The Cost... Yeah
 
-If we use a small pipe to fill the pool, it will take us quite a while. However, if we find a tap to hold a big pipe and have the tap pushing a lot of water, the quicker the pool will be filled.
+Okay so now the part that nobody wants to talk about.
 
-Now, substitute the pool with a digital file like a movie or song that we would like to download from the internet. We first look at our pipe (internet device) and how much data it can handle.
+The hardware will set you back about K10,000 and above. That is before we even get to the monthly fee. The unlimited residential plan is around K1,160 per month.
 
-In the case of Starlink, think of it as a big pipe with high pressure water flowing through — meaning we will complete our task faster.
+For Zambia? That is a lot of money. Like way out of reach for most people. If you are earning a normal salary, this is not something you just pick up on a whim.
 
-Get it?
+But here is the other side of it. If you are running a business, or you work from home and internet is critical for you, or you live somewhere where there is literally no other option... then you start to understand the value. Time is money. And if you are losing hours every day to slow internet, maybe this pays for itself.
 
-## The Cost Reality
+## My Verdict
 
-Look, I tried simplifying it and I hope you understood this. But just like everything else in life, nothing is free.
+So what do I think?
 
-The cost of hardware in order for you to get this great service is considered very high by Zambian standards. At the publication of this article:
+Starlink delivers. The technology works. The speeds are real. The equipment is solid. For anyone who can afford it, it is genuinely worth it.
 
-| Item | Cost (ZMW) |
-|------|------------|
-| Standard Kit | K10,000+ |
-| Monthly Residential Unlimited | K1,160 |
+If you are on the fence, do the math. What is slow internet costing you in lost time every month? Sometimes the expensive option is actually the cheap one in the long run.
 
-I have to say, this is out of reach for the majority of Zambians. You also can't easily shift your device to another location.
-
-## The Verdict
-
-Starlink delivers on its promise of fast, reliable internet. The technology is impressive, the hardware is premium quality, and the speeds are genuinely excellent. But the barrier to entry remains high for most Zambians.
-
-If you can afford it, it's absolutely worth it. If you're on the fence, consider whether the K10,000+ upfront investment and K1,160 monthly makes sense for your situation compared to alternatives like fibre (where available) or mobile data plans.
-
----
-
-*What's your experience with Starlink in Zambia? Drop a comment below.*
+But if K10,000 is going to break you... I get it. Just be honest about it. Do not go into debt for WiFi.
