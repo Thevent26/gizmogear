@@ -16,8 +16,9 @@ featured: true
 
 Growing up, we used to hear about The Rise Of The Machines. I mean we watched The Terminator and the story there was that a computer system called Skynet became self aware and turned rogue, rebelled and then there was a great war that culminated into Judgment day.
 
-![Terminator: Dark Fate (2019)](/images/terminator-dark-fate.jpg)
-*Terminator: Dark Fate (2019) — the fear of AI going rogue*
+<div style="float: left; margin-right: 20px; margin-bottom: 10px;">
+![Terminator 2 (1984)](/images/terminator-1984.jpg)
+*Terminator (1984) — the original fear*</div>
 
 Then we watched The Matrix where the machines felt threatened by the humans and a war broke out. The machines used to get their energy from the sun and so the humans decided to block the sun by creating a thick layer of smoke. The machines needed to survive and through their research, discovered that the alternative source of energy would be the humans themselves. You see, the human brain is a powerful thing and has electrical energy when its thinking. Thats how the machines imprisoned the humans and put them in pods and created a virtual world where humans lived normal lives, constantly using their brains thus powering the machines.
 
