@@ -4,7 +4,7 @@ date: 2026-04-01
 author: Tech Joe
 category: Opinion
 excerpt: "Growing up we feared Skynet. Today I'm using agentic AI as a virtual employee. Here's what changed my mind and how you can figure out where you fit in this new world."
-coverImage: "/images/ai-article-cover.jpg"
+coverImage: "/images/ai-agent-future.jpg"
 tags:
   - AI
   - Artificial Intelligence
