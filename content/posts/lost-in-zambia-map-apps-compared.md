@@ -4,7 +4,7 @@ date: 2026-04-02
 author: Tech Joe
 category: Review
 excerpt: "I spent two weeks testing every map app I could find on my phone against Lusaka's chaos. Here's what actually works and what will leave you staring at a screen wondering where the road went."
-coverImage: "/images/lost-zambia-cover.jpg"
+coverImage: "/images/tech-joe-lost-zambia.jpg"
 tags:
   - Maps
   - Navigation

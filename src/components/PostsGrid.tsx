@@ -1,64 +1,17 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import type { Post } from './FeaturedPost'
+import { useEffect, useRef, useState } from 'react'
 
-const posts: Post[] = [
-  {
-    slug: 'starlink-zambia-6-months',
-    title: 'Starlink After 6 Months in Zambia: The Real Story',
-    excerpt: 'We installed Starlink at a compound in Chilenge. Here is what six months of rain, load-shedding, and ISP outages actually looks like.',
-    category: 'Connectivity',
-    date: 'March 10, 2026',
-    readTime: '9 min',
-    gradient: 'from-[#00d4ff]/15 to-transparent',
-  },
-  {
-    slug: 'tecno-spark-30-review',
-    title: 'Tecno Spark 30C: The Best Budget Phone Under K2,000?',
-    excerpt: 'Tecno keeps shipping phones that punch above their weight. We spent two weeks with the Spark 30C to find out if it is worth your money.',
-    category: 'Gadget Review',
-    date: 'March 5, 2026',
-    readTime: '7 min',
-    gradient: 'from-[#f59e0b]/15 to-transparent',
-  },
-  {
-    slug: 'zamtel-5g-lusaka',
-    title: 'Zamtel 5G in Lusaka: Hype or Real?',
-    excerpt: 'Zamtel launched 5G in parts of Lusaka last year. We tested it across 15 locations to see if it actually delivers on the promise.',
-    category: 'Networks',
-    date: 'Feb 28, 2026',
-    readTime: '8 min',
-    gradient: 'from-[#8b5cf6]/15 to-transparent',
-  },
-  {
-    slug: 'power-backup-guide-2026',
-    title: 'The Ultimate Power Backup Guide for Zambian Homes',
-    excerpt: 'Inverters, UPS, solar, power banks — we break down every option with real costs, real runtimes, and real opinions for Lusaka conditions.',
-    category: 'Guides',
-    date: 'Feb 20, 2026',
-    readTime: '14 min',
-    gradient: 'from-[#00d4ff]/15 to-transparent',
-  },
-  {
-    slug: 'ecobanking-apps-2026',
-    title: 'Zambia\'s Best Banking Apps in 2026: Ranked',
-    excerpt: 'We tested all the major banking apps — EcoNet, Zamtel Money, Bongo, and bank apps — on speed, reliability, and UX from a Lusaka perspective.',
-    category: 'Fintech',
-    date: 'Feb 14, 2026',
-    readTime: '10 min',
-    gradient: 'from-[#f59e0b]/15 to-transparent',
-  },
-  {
-    slug: 'hp-chromebook-zambia',
-    title: 'Can a K3,500 Chromebook Actually Work in Zambia?',
-    excerpt: 'An HP Chromebook for school-going kids. We set one up with offline tools, loaded it with Zambian educational content, and let a Grade 9 student use it for a month.',
-    category: 'Gadget Review',
-    date: 'Feb 8, 2026',
-    readTime: '11 min',
-    gradient: 'from-[#8b5cf6]/15 to-transparent',
-  },
-]
+interface Post {
+  slug: string
+  title: string
+  excerpt: string
+  category: string
+  date: string
+  readTime: string
+  coverImage: string
+  featured: boolean
+}
 
 function PostCard({ post, delay }: { post: Post; delay: number }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -86,16 +39,32 @@ function PostCard({ post, delay }: { post: Post; delay: number }) {
         href={`/posts/${post.slug}`}
         className="group block h-full rounded-2xl overflow-hidden bracket-card card-hover border border-[var(--card-border)] bg-[var(--bg-card)]"
       >
-        {/* Thumbnail */}
-        <div className={`h-48 relative overflow-hidden bg-gradient-to-br ${post.gradient}`}>
-          {/* Category icon */}
+        {/* Cover Image */}
+        <div className="h-48 relative overflow-hidden">
+          {post.coverImage ? (
+            <img
+              src={post.coverImage}
+              alt={post.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement
+                target.style.display = 'none'
+                const parent = target.parentElement
+                if (parent) {
+                  parent.style.background = '#1a1a2e'
+                  parent.innerHTML = `<div class="flex items-center justify-center h-full"><span class="text-4xl">📱</span></div>`
+                }
+              }}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[#00d4ff]/10 to-[#8b5cf6]/10" />
+          )}
+          {/* Category badge */}
           <div className="absolute top-4 left-4">
             <CategoryIcon category={post.category} />
           </div>
           {/* Top glow line */}
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/30 to-transparent" />
-          {/* Animated grid overlay */}
-          <div className="absolute inset-0 hex-pattern opacity-20" />
         </div>
 
         {/* Content */}
@@ -125,6 +94,9 @@ function CategoryIcon({ category }: { category: string }) {
     'Networks': '#f59e0b',
     'Guides': '#00d4ff',
     'Fintech': '#f59e0b',
+    'Opinion': '#ef4444',
+    'Review': '#00d4ff',
+    'Tech': '#00d4ff',
   }
   const c = colors[category] || '#00d4ff'
 
@@ -155,13 +127,9 @@ function CategoryIcon({ category }: { category: string }) {
           <circle cx="16" cy="6" r="1.5" stroke={c} strokeWidth="1" opacity="0.6" />
           <circle cx="4" cy="14" r="1.5" stroke={c} strokeWidth="1" opacity="0.6" />
           <circle cx="16" cy="14" r="1.5" stroke={c} strokeWidth="1" opacity="0.6" />
-          <line x1="4" y1="7.5" x2="8" y2="9" stroke={c} strokeWidth="0.8" opacity="0.5" />
-          <line x1="16" y1="7.5" x2="12" y2="9" stroke={c} strokeWidth="0.8" opacity="0.5" />
-          <line x1="4" y1="12.5" x2="8" y2="11" stroke={c} strokeWidth="0.8" opacity="0.5" />
-          <line x1="16" y1="12.5" x2="12" y2="11" stroke={c} strokeWidth="0.8" opacity="0.5" />
         </svg>
       )}
-      {category === 'Guides' && (
+      {(category === 'Guides' || category === 'Tech') && (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M4 3h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" stroke={c} strokeWidth="1.2" />
           <path d="M6 7h8M6 10h5" stroke={c} strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
@@ -174,11 +142,59 @@ function CategoryIcon({ category }: { category: string }) {
           <path d="M5 13h3" stroke={c} strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       )}
+      {category === 'Opinion' && (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 4h12v9H4z" stroke={c} strokeWidth="1.2" rx="1" />
+          <path d="M6 15h8M6 17h4" stroke={c} strokeWidth="1.2" strokeLinecap="round" />
+        </svg>
+      )}
+      {category === 'Review' && (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <rect x="2" y="5" width="16" height="10" rx="2" stroke={c} strokeWidth="1.2" />
+          <circle cx="10" cy="10" r="2" fill={c} opacity="0.6" />
+        </svg>
+      )}
     </div>
   )
 }
 
 export default function PostsGrid() {
+  const [posts, setPosts] = useState<Post[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/api/posts')
+      .then(res => res.json())
+      .then(data => {
+        setPosts(data.slice(0, 6))
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error(err)
+        setLoading(false)
+      })
+  }, [])
+
+  if (loading) {
+    return (
+      <section className="py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-10">
+            <div className="flex items-center gap-3">
+              <div className="circuit-line flex-1 max-w-[60px]" />
+              <span className="font-mono text-xs uppercase tracking-widest text-[#64748b]">Latest</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="h-80 rounded-2xl bg-[#1a1a2e]/50 animate-pulse" />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
