@@ -20,7 +20,7 @@ So. You're driving through Lusaka. You've got an address written on your phone. 
 
 You turn left.
 
-There's no road. Just a compound wall and a very confused security guard who starts laughing.
+There's no road. Just a wall around a residential area and a very confused security guard who starts laughing.
 
 This is Zambia. This is what I wanted to test.
 
@@ -42,7 +42,7 @@ There's always a but when it comes to Zambia.
 
 Street View here is almost useless. They've never done a proper Street View car run through most of Lusaka. What you get is blurry, outdated imagery from 2018 or earlier in some areas. Some parts of the city have never been covered.
 
-And the addresses. This is where Google Maps breaks down. Most residential areas in Lusaka don't have proper street addresses. When you search for "House 23, Kamloops, Lusaka" Google Maps will stare at you blankly for a second, then drop a pin somewhere in the middle of a compound and say "that's it."
+And the addresses. This is where Google Maps breaks down. Most residential areas in Lusaka don't have proper street addresses. When you search for "House 23, Kamloops, Lusaka" Google Maps will stare at you blankly for a second, then drop a pin somewhere in the middle of an area and say "that's it."
 
 Your best bet on Google Maps in Lusaka is to use the satellite view, find the house or building visually, drop a pin, and save that pin. Then share it with whoever needs to find you. Don't rely on the search function for addresses.
 
@@ -84,7 +84,7 @@ In theory, this should make Waze incredible for Zambia. We have road conditions 
 
 In practice, it depends on how many people are using Waze in your area.
 
-In Lusaka, Waze has a small but active user base. You'll get alerts on the main roads, the highway into town from the airport, the Kafue Road corridor. Reports of jams and police come through. But venture into newer areas, peri-urban settlements, anywhere that doesn't have a established Waze community and you're essentially back to Google Maps with extra steps.
+In Lusaka, Waze has a small but active user base. You'll get alerts on the main roads, the highway into town from the airport, the Kafue Road stretch. Reports of jams and police come through. But venture into newer areas, peri-urban settlements, anywhere that doesn't have a established Waze community and you're essentially back to Google Maps with extra steps.
 
 The GPS accuracy issue I found is real though. Waze is more sensitive to GPS drift than Google Maps. In areas with poor cellular coverage, which is most of Lusaka outside the city centre, Waze will occasionally lose your position and reconnect you to the wrong road. Not often, but enough that you learn to double-check where you actually are before following its instructions.
 
@@ -92,7 +92,7 @@ One thing Waze does well that Google Maps doesn't is rerouting when you miss a t
 
 The verdict on Waze for Zambia:
 
-Works for: main corridors, known problem areas, traffic alerts if you're in a busy zone.
+Works for: main roads, known problem areas, traffic alerts if you're in a busy zone.
 
 Struggles with: GPS drift in low coverage areas, sparse user data in newer areas, addresses are still a problem just like Google Maps.
 
