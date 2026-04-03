@@ -20,5 +20,10 @@ export async function GET() {
     readTime: featured.readTime,
     coverImage: featured.coverImage,
     featured: featured.featured,
+  }, {
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'Pragma': 'no-cache',
+    },
   })
 }

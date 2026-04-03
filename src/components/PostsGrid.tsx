@@ -40,25 +40,12 @@ function PostCard({ post, delay }: { post: Post; delay: number }) {
         className="group block h-full rounded-2xl overflow-hidden bracket-card card-hover border border-[var(--card-border)] bg-[var(--bg-card)]"
       >
         {/* Cover Image */}
-        <div className="h-48 relative overflow-hidden">
-          {post.coverImage ? (
-            <img
-              src={post.coverImage}
-              alt={post.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement
-                target.style.display = 'none'
-                const parent = target.parentElement
-                if (parent) {
-                  parent.style.background = '#1a1a2e'
-                  parent.innerHTML = `<div class="flex items-center justify-center h-full"><span class="text-4xl">📱</span></div>`
-                }
-              }}
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-[#00d4ff]/10 to-[#8b5cf6]/10" />
-          )}
+        <div className="h-48 relative overflow-hidden bg-[#1a1a2e]">
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
           {/* Category badge */}
           <div className="absolute top-4 left-4">
             <CategoryIcon category={post.category} />
@@ -163,7 +150,7 @@ export default function PostsGrid() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/posts')
+    fetch(`/api/posts?v=${Date.now()}`)
       .then(res => res.json())
       .then(data => {
         setPosts(data.slice(0, 6))

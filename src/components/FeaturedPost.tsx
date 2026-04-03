@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import type { Post } from './FeaturedPost'
 
 interface PostFromServer {
   slug: string
@@ -27,7 +26,7 @@ export default function FeaturedPost() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    fetch('/api/posts-featured')
+    fetch(`/api/posts-featured?v=${Date.now()}`)
       .then(res => res.json())
       .then(data => setPost(data))
       .catch(console.error)
@@ -76,17 +75,11 @@ export default function FeaturedPost() {
           className="group block relative overflow-hidden rounded-3xl bracket-card card-hover"
         >
           {/* Cover image as background */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[#1a1a2e]">
             <img
               src={post.coverImage}
               alt={post.title}
               className="w-full h-full object-cover"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement
-                target.style.display = 'none'
-                const parent = target.parentElement
-                if (parent) parent.style.background = '#1a1a2e'
-              }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f] via-[#0a0a0f]/90 to-transparent" />
           </div>

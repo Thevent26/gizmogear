@@ -15,5 +15,10 @@ export async function GET() {
     coverImage: p.coverImage,
     featured: p.featured,
   }))
-  return NextResponse.json(simplified)
+  return NextResponse.json(simplified, {
+    headers: {
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'Pragma': 'no-cache',
+    },
+  })
 }
