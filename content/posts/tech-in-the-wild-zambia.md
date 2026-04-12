@@ -4,7 +4,7 @@ date: 2026-04-12
 author: Tech Joe
 category: Gear
 excerpt: "From Starlink Mini to DJI Osmo Pocket 3 — what actually works when you're shooting content in the middle of the Zambezi bush."
-coverImage: "/images/tech-joe-starlink.jpg"
+coverImage: "/images/tech-in-wild-zambezi.jpg"
 tags:
   - Safari
   - Tech
