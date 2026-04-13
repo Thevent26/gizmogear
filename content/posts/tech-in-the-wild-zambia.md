@@ -114,4 +114,4 @@ The bush doesn't have to mean disconnected. It just means you have to be more in
 
 ---
 
-*What's in your safari tech kit?*
+*What's in your safari tech kit?* 
