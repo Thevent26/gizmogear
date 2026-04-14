@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+/* Font loaded via next/font */
 
 :root {
   --bg-deep: #0a0a0f;
@@ -35,7 +35,7 @@ html {
 }
 
 body {
-  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   background-color: var(--bg-deep);
   color: var(--text-secondary);
   -webkit-font-smoothing: antialiased;
