@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { getAllPosts, getFeaturedPost } from '@/lib/posts'
 import Link from 'next/link'
 import AdBanner from '@/components/AdBanner'
@@ -24,7 +27,12 @@ function getCategoryColor(category: string): string {
 export default function Home() {
   const posts = getAllPosts()
   const featuredPost = getFeaturedPost()
-  const recentPosts = posts.filter(p => p.slug !== featuredPost?.slug).slice(0, 6)
+  const [activeCategory, setActiveCategory] = useState('All')
+  const filteredPosts = posts.filter(p => {
+    if (activeCategory === 'All') return true
+    return p.category === activeCategory
+  })
+  const recentPosts = filteredPosts.filter(p => p.slug !== featuredPost?.slug).slice(0, 6)
 
   return (
     <main className="min-h-screen bg-[var(--bg-deep)]">
@@ -48,7 +56,7 @@ export default function Home() {
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
               Honest reviews, practical guides, and tech insights: tested in Zambian conditions.
             </p>
-            <CategoryFilter active="All" onChange={(cat) => console.log(cat)} />
+            <CategoryFilter active={activeCategory} onChange={setActiveCategory} />
           </div>
 
           {/* Featured Article - Magazine Style */}
