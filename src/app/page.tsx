@@ -150,7 +150,6 @@ export default function Home() {
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           loading="lazy"
-                          onError="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';"
                         />
                       ) : null}
                       <div className={`fallback w-full h-full ${post.coverImage ? 'hidden' : 'flex'} items-center justify-center`}>
