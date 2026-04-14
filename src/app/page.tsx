@@ -6,7 +6,7 @@ import Link from 'next/link'
 import AdBanner from '@/components/AdBanner'
 import NavBar from '@/components/NavBar'
 import TrendingTicker from '@/components/TrendingTicker'
-import ScrollReveal from '@/components/ScrollReveal'
+
 import CategoryFilter from '@/components/CategoryFilter'
 import Newsletter from '@/components/Newsletter'
 
