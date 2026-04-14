@@ -440,3 +440,32 @@ a {
   height: auto;
   border-radius: 8px;
 }
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animated gradient */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(135deg, #0ea5e9, #8b5cf6, #ec4899, #f59e0b);
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animated-gradient-text {
+  background: linear-gradient(135deg, #0ea5e9, #8b5cf6, #ec4899, #f59e0b);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 8s ease infinite;
+}

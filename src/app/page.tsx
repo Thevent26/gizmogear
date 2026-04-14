@@ -2,6 +2,11 @@ import { getAllPosts, getFeaturedPost } from '@/lib/posts'
 import Link from 'next/link'
 import AdBanner from '@/components/AdBanner'
 import NavBar from '@/components/NavBar'
+import TrendingTicker from '@/components/TrendingTicker'
+import ScrollReveal from '@/components/ScrollReveal'
+import CategoryFilter from '@/components/CategoryFilter'
+import Newsletter from '@/components/Newsletter'
+import { useState } from 'react'
 
 // Category color mapping
 const categoryColors: Record<string, string> = {
@@ -24,9 +29,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--bg-deep)]">
       <NavBar />
+      <TrendingTicker />
 
       {/* Hero Section with Featured Article */}
-      <section className="pt-24 pb-12 px-6">
+      <section className="pt-12 pb-12 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Hero Header */}
           <div className="text-center mb-12 pt-8">
@@ -39,15 +45,16 @@ export default function Home() {
                 Tech Blog
               </span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
               Honest reviews, practical guides, and tech insights: tested in Zambian conditions.
             </p>
+            <CategoryFilter active="All" onChange={(cat) => console.log(cat)} />
           </div>
 
           {/* Featured Article - Magazine Style */}
           {featuredPost && (
             <Link href={`/posts/${featuredPost.slug}`} className="group block">
-              <article className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#12121a] to-[#0a0a0f] border border-[var(--card-border)] hover:border-cyan-500/30 transition-all duration-500">
+              <article className="relative rounded-3xl overflow-hidden animated-gradient border border-[var(--card-border)] hover:border-cyan-500/30 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative p-8 md:p-12 lg:p-16">
@@ -141,7 +148,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {recentPosts.map((post) => (
                 <Link key={post.slug} href={`/posts/${post.slug}`} className="group">
-                  <article className="h-full rounded-2xl bg-[var(--bg-card)] border border-[var(--card-border)] hover:border-cyan-500/30 overflow-hidden transition-all duration-300 hover:-translate-y-1">
+                  <article className="h-full rounded-2xl glass border border-[var(--card-border)] hover:border-cyan-500/30 overflow-hidden transition-all duration-300 hover:-translate-y-1">
                     {/* Card Header - Magazine style: image leads */}
                     <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#12121a]">
                       {post.coverImage ? (
@@ -237,7 +244,7 @@ export default function Home() {
 
               {/* Value props */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-                <div className="p-5 rounded-xl bg-[var(--bg-card)] border border-[var(--card-border)]">
+                <div className="p-5 rounded-xl glass border border-[var(--card-border)]">
                   <div className="w-10 h-10 mb-3 rounded-lg bg-cyan-500/20 flex items-center justify-center">
                     <svg className="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -246,7 +253,7 @@ export default function Home() {
                   <h3 className="text-white font-semibold text-sm mb-1">Honest Reviews</h3>
                   <p className="text-gray-500 text-xs">No fluff. Real testing.</p>
                 </div>
-                <div className="p-5 rounded-xl bg-[var(--bg-card)] border border-[var(--card-border)]">
+                <div className="p-5 rounded-xl glass border border-[var(--card-border)]">
                   <div className="w-10 h-10 mb-3 rounded-lg bg-purple-500/20 flex items-center justify-center">
                     <svg className="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -255,7 +262,7 @@ export default function Home() {
                   <h3 className="text-white font-semibold text-sm mb-1">Local Context</h3>
                   <p className="text-gray-500 text-xs">Made for Zambia.</p>
                 </div>
-                <div className="p-5 rounded-xl bg-[var(--bg-card)] border border-[var(--card-border)]">
+                <div className="p-5 rounded-xl glass border border-[var(--card-border)]">
                   <div className="w-10 h-10 mb-3 rounded-lg bg-pink-500/20 flex items-center justify-center">
                     <svg className="w-5 h-5 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -289,6 +296,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Newsletter />
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-[var(--card-border)]">
