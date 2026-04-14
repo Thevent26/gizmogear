@@ -59,7 +59,7 @@ export default function HeroSection() {
           className="text-lg md:text-xl text-[#64748b] max-w-2xl mx-auto mb-10 leading-relaxed fade-up"
           style={{ animationDelay: '200ms' }}
         >
-          Clean, professional reviews of gadgets, services, and tech trends — through the lens
+          Clean, professional reviews of gadgets, services, and tech trends: through the lens
           of Zambia. Not just specs. Stories. Interactivity. Local relevance.
         </p>
 

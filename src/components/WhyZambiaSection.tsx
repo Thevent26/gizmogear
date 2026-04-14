@@ -17,7 +17,7 @@ const pillars = [
       </svg>
     ),
     label: 'Power Resilience',
-    desc: 'Gadgets that survive load-shedding are not a niche — they are the market.',
+    desc: 'Gadgets that survive load-shedding are not a niche: they are the market.',
   },
   {
     icon: (
@@ -50,7 +50,7 @@ const pillars = [
       </svg>
     ),
     label: 'Cultural Fit',
-    desc: 'Tech that ignores Zambian social norms — family data sharing, Bonga Points — is tech that fails.',
+    desc: 'Tech that ignores Zambian social norms: family data sharing, Bonga Points: is tech that fails.',
   },
 ]
 
@@ -105,7 +105,7 @@ export default function WhyZambiaSection() {
 
             <p className="text-[#94a3b8] text-lg leading-relaxed mb-8">
               Tech does not exist in a vacuum. We examine affordability, availability, power
-              resilience, network coverage, and cultural fit — because a gadget that works in
+              resilience, network coverage, and cultural fit: because a gadget that works in
               Silicon Valley might completely flop in Chawama.
             </p>
 

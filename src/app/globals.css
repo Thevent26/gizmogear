@@ -178,8 +178,16 @@ a {
 }
 
 .light .nav-scrolled {
-  background: var(--nav-bg) !important;
+  background: rgba(248, 249, 250, 0.8) !important;
   border-bottom: 1px solid var(--card-border);
+}
+
+/* Scrolled nav state - applied always (works for dark + light) */
+.nav-scrolled {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .light ::-webkit-scrollbar-track {

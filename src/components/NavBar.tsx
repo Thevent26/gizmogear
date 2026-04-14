@@ -10,12 +10,13 @@ const navLinks = [
   { label: 'About', href: '#about' },
 ]
 
-function GizmoGearLogo({ height = 40 }: { height?: number }) {
+function GizmoGearLogo({ scrolled = false }: { scrolled?: boolean }) {
   return (
     <img
       src="/images/logo.png"
       alt="GizmoGear"
-      style={{ height: `${height}px`, width: 'auto', objectFit: 'contain' }}
+      className={`transition-all duration-300 ${scrolled ? 'h-[50px] md:h-[50px]' : 'h-[100px] md:h-[125px]'}`}
+      style={{ width: 'auto', objectFit: 'contain' }}
     />
   )
 }
@@ -48,12 +49,12 @@ export default function NavBar() {
   }
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled' : ''}`}>
-      <div className="max-w-7xl mx-auto px-6 py-4">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'nav-scrolled backdrop-blur-md bg-black/60 border-b border-white/10' : ''}`}>
+      <div className={`max-w-7xl mx-auto px-6 ${scrolled ? 'py-2' : 'py-4'} transition-all duration-300`}>
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <GizmoGearLogo height={125} />
+          <a href="/" className="flex items-center gap-3 group">
+            <GizmoGearLogo scrolled={scrolled} />
           </a>
 
           {/* Desktop Nav */}
