@@ -6,7 +6,7 @@ import TrendingTicker from '@/components/TrendingTicker'
 import ScrollReveal from '@/components/ScrollReveal'
 import CategoryFilter from '@/components/CategoryFilter'
 import Newsletter from '@/components/Newsletter'
-import { useState } from 'react'
+
 
 // Category color mapping
 const categoryColors: Record<string, string> = {
