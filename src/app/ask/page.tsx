@@ -7,7 +7,7 @@ interface Question {
   email: string;
   category: string;
   question: string;
-  createdAt: string;
+  created_at: string;
 }
 
 async function getQuestions(): Promise<Question[]> {
