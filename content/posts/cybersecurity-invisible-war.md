@@ -8,7 +8,7 @@ So here is something that happened to me personally.
 
 A good friend of mine got his WhatsApp hacked. It happens. But what happened next is what got me.
 
-His account was in a WhatsApp group we have been part of for 16 years. Sixteen. This group has been through everything with us. Weddings, funerals, business deals, arguments, late night nonsense. It is part of our history.
+His account was in a football WhatsApp group we have been part of for years. Match banter, transfer arguments, team lineups at 2am. We were also in a few other groups together. Work groups, family groups, you know how it is.
 
 The moment the hacker got into my friend's account, he went straight for that group. Within seconds he had demoted every admin. All of us. Just like that.
 
@@ -16,7 +16,7 @@ Then the messages started.
 
 "I now own this group. If you want it back, you have to pay me."
 
-This person, whoever they are, sitting somewhere we do not even know, had taken something that had been ours for 16 years and was now demanding money to return it.
+This person, whoever they are, sitting somewhere we do not even know, had taken something that had been ours for years and was now demanding money to return it.
 
 Of course we have not paid him. And we will not.
 
@@ -72,7 +72,7 @@ They are not from your provider. They found your name on Facebook and your numbe
 
 ## The WhatsApp Hijack: How Your Account Gets Stolen in 60 Seconds
 
-This is happening right now across Zambia and the region. Zimbabwe's national cyber security team has been warning citizens. Pakistan's issued an emergency advisory. This is not theoretical. My friend's 16 year group hijack? Exactly the same method they warn about.
+This is happening right now across Zambia and the region. Zimbabwe's national cyber security team has been warning citizens. Pakistan's issued an emergency advisory. This is not theoretical. My friend's football group hijack? Exactly the same method they warn about.
 
 Here is exactly how the most common WhatsApp takeover works.
 
@@ -203,7 +203,7 @@ Because the attackers are not taking a day off. And neither should your defences
 
 ---
 
-*Joel Maulu is the founder of GizmoGear, Zambia's source for honest tech reviews and practical digital safety advice. Got a security question or a story to share? Reach out at joel@cguit.io.*
+*GizmoGear is Zambia's source for honest tech reviews and practical digital safety advice. Got a security question or a story to share? Reach out at editor@gizmogear.tech.*
 
 ---
 
