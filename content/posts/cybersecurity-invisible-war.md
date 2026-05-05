@@ -1,4 +1,4 @@
-# The Invisible War: What Every Zambian Needs to Know About Cybersecurity (Part 1 — You)
+# You Have Been Hacked. Unhack Yourself.
 
 **By Joel Maulu | GizmoGear**
 
