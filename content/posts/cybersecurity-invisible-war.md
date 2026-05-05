@@ -1,7 +1,18 @@
-# You Have Been Hacked. Unhack Yourself.
-
-**By Joel Maulu | GizmoGear**
-
+---
+title: "You Have Been Hacked. Unhack Yourself."
+date: 2026-05-05
+author: Tech Joe
+category: Security
+excerpt: "A friend's WhatsApp got hacked. Within seconds, our football group of years was stolen and held for ransom. Most Zambians don't know how close they are to the same trap."
+coverImage: "/images/cybersecurity-invisible-war.jpg"
+tags:
+  - Cybersecurity
+  - WhatsApp
+  - Instagram
+  - Privacy
+  - Security
+  - Zambia
+featured: true
 ---
 
 So here is something that happened to me personally.
